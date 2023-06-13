@@ -1,0 +1,5 @@
+git init --initial-branch=main
+git remote add origin git@gitlab.com:shruti-coditas/book-distribution-app.git
+git add .
+git commit -m "Initial commit"
+git push -u origin main

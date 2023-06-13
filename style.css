@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.mainPage {
+  display: flex;
+  background: url(./images/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  justify-content: center;
+  align-items: center;
+  /* z-index: 1; */
+}
+.admin-login-part {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100vh;
+  margin-right: 6rem;
+  margin-left: -5rem;
+}
+
+.registration-part {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+  margin-left: -4rem;
+}
+.button {
+  padding: 1rem;
+  font-size: large;
+  cursor: pointer;
+  font-weight: 500;
+  color: black;
+  background-color: rgb(236, 227, 227);
+}
+.button:hover {
+  color: white;
+  border-color: white;
+}
+.bg {
+  background-color: lightgray;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: none;
+  margin: 0;
+  padding: 0;
+  opacity: 0.8;
+}
+.errorMessage {
+  display: none;
+  height: max-content;
+  width: max-content;
+  background-color: yellow;
+  color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 1s;
+  z-index: 10;
+}
+#admin-button {
+  margin-left: 38rem;
+  width: max-content;
+}

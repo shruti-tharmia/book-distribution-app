@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="form.css" />
+    <link rel="stylesheet" href="admin.css" />
+    
+    <script src="./script.js" defer type="module"></script>
+    <title>Book Distributor App</title>
+  </head>
+  <body>
+    <!-- /////////////////////////// main page /////////////////////////// -->
+
+    <section class="mainPage" id="frontPage">
+      <section class="admin-login-part" id="admin-login-part">
+        <button type="button" class="button" id="admin-button">
+         Login
+        </button>
+      </section>
+      <section class="registration-part" id="registration-part">
+        <button type="button" class="button" id="register-button">
+          Register
+        </button>
+      </section>
+    </section>
+
+    <!-- ///////////////////////////// login form //////////////////////////////// -->
+
+    <section>
+      <div class="loginForm admin-login-form" id="admin-login-form">
+        <section class="heading">Login</section>
+        <section class="form">
+          <form id="form-for-login" class="newForm" name="form-for-login">
+            <input
+              type="text"
+              required
+              name="username"
+              id="username-for-login"
+              placeholder="Enter Username"
+            />
+            <i class="far fa-envelope"></i>
+            <input
+              id="password-for-login"
+              required
+              type="password"
+              name="password"
+              placeholder="Enter Password"
+            />
+            <i class="fas fa-lock"></i>
+            <div class="buttons">
+              <button
+                type="button"
+                id="submit-admin-login"
+                name="submit-admin-login"
+                class="left-button"
+              >
+                Login
+              </button>
+              <button
+                type="button"
+                id="close-login-button"
+                class="right-button"
+              >
+                Close
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <!-- //////////////////////////////////////// sign-up form ////////////////////////// -->
+
+    <section>
+      <div class="loginForm admin-login-form" id="signup-form">
+        <section class="heading">Register</section>
+        <section class="form">
+          <form id="sign-up-form" class="newForm" name="sign-up-form">
+            <input
+              type="text"
+              required
+              name="username"
+              id="username-for-signup"
+              placeholder="Enter Username"
+            />
+            <input
+              type="email"
+              required
+              name="email"
+              id="email-for-signup"
+              placeholder="Enter Email Id"
+            />
+            <i class="far fa-envelope"></i>
+            <input
+              id="password-for-signup"
+              required
+              type="password"
+              name="password"
+              placeholder="Enter Password"
+            />
+            <i class="fas fa-lock"></i>
+            <div class="buttons">
+              <button type="button" id="submit-signup" class="left-button">
+                Register
+              </button>
+              <button
+                type="button"
+                id="close-signup-button"
+                class="right-button"
+              >
+                Close
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <!-- ////////////////////////////////////////////// admin-page ////////////////////////////// -->
+
+    <section id="admin-page">
+        <header class="headingDiv">
+          <h1 class="admin-text">Admin Dashboard</h1>
+          <section class="requests" id="requests">
+              <button
+              type="button"
+              class="view-requests-button"
+              id="view-requests-button"
+            >
+              View Requests
+            </button>
+          </section>
+          <section class="assign" id="assign">
+            <button
+              type="button"
+              class="assign-school-button"
+              id="assign-school-button"
+            >
+              Assign School
+            </button>
+          </section>
+          <section class="school" id="school">
+            <button
+              type="button"
+              class="schools-button"
+              id="schools-button"
+            >
+              School
+            </button>
+          </section>
+          <section class="logout" id="logout">
+            <button
+              type="button"
+              class="logout-button"
+              id="admin-logout-button"
+            >
+              Logout
+            </button>
+          </section>
+        </header>
+<!--   
+        <section class="admin">
+         
+      </section> -->
+      <div id="heading-text"></div>
+  
+      <section class="worker admin-cards">
+        <div class="year">
+        <input type="text" placeholder="Enter Year" name="year" id="year"/>
+        <button type="button" id="get-data">Get Data</button>
+      </div>
+
+      
+      
+      
+      <!-- <section id="admin-cards" class="worker admin-cards"></section> -->
+      <section class="admin-dashboard" id="admin-dashboard">
+          </section>
+      <!-- </section> -->
+      </section>
+      </section>
+    <!-- ////////////////////////////////////////////// worker-page ////////////////////////////// -->
+
+    <section id="worker-page">
+      <header class="headingDiv">
+        <h1 class="admin-text">Worker Dashboard</h1>
+        <section class="logout" id="logout">
+          <button
+            type="button"
+            class="logout-button"
+            id="worker-logout-button"
+          >
+            Logout
+          </button>
+        </section>
+      </header>
+
+      <main class="worker">
+        <div id="assigned-school-to-worker"></div>
+      </main>
+    </section>
+
+    <!-- ///////////////////////////////////// submit-details-form ///////////////////////////////// -->
+
+    <section>
+      <div
+        class="loginForm feedbackform"
+        id="details-form"
+        name="feedbackform"
+        method="post"
+      >
+        <section class="heading">Submit Details for the School</section>
+        <section class="form">
+          <form
+            id="submit-details-form"
+            class="newForm"
+            name="submit-details-form"
+          >
+            <input type="text" name="school-name" id="school-name" placeholder="Agasti" disabled/>
+            <h3>Check the boxes only if 100% distrubution is done</h3>
+
+            <h3 class="class-name">Class 1</h3>
+            <div class="checkbox-area">
+              <h4 class="subject-name">Maths</h4>
+              <input type="checkbox" name="check" value="maths" id="subject" class="class1" />
+              <h4 class="subject-name">Science</h4>
+              <input
+                type="checkbox"
+                name="check"
+                value="science"
+                id="subject"
+                class="class1" 
+              />
+              <h4 class="subject-name">History</h4>
+              <input
+                type="checkbox"
+                name="check"
+                value="history"
+                id="subject"
+                class="class1" 
+              />
+              <h4 class="subject-name">Geography</h4>
+              <input
+                type="checkbox"
+                name="check"
+                value="geography"
+                id="subject"
+                class="class1" 
+              />
+            </div>
+            <h3 class="class-name">Class 2</h3>
+            <div class="checkbox-area">
+              <h4>Maths</h4>
+              <input type="checkbox" name="check" value="maths" id="subject" class="class2" />
+              <h4>Science</h4>
+              <input
+                type="checkbox"
+                name="check"
+                value="science"
+                id="subject"
+                class="class2" 
+              />
+              <h4>History</h4>
+              <input
+                type="checkbox"
+                name="check"
+                value="history"
+                id="subject"
+                class="class2" 
+              />
+              <h4>Geography</h4>
+              <input
+                type="checkbox"
+                name="check"
+                value="geography"
+                id="subject"
+                class="class2" 
+              />
+            </div>
+            <h3 class="class-name">Class 3</h3>
+            <div class="checkbox-area">
+              <h4>Maths</h4>
+              <input type="checkbox" name="check" value="maths" id="subject" class="class3"/>
+              <h4>Science</h4>
+              <input
+                type="checkbox"
+                name="check"
+                value="science"
+                id="subject"
+                class="class3"
+              />
+              <h4>History</h4>
+              <input
+                type="checkbox"
+                name="check"
+                value="history"
+                id="subject"
+                class="class3"
+              />
+              <h4>Geography</h4>
+              <input
+                type="checkbox"
+                name="check"
+                value="geography"
+                id="subject"
+                class="class3"
+              />
+            </div>
+            <h3 class="class-name">Class 4</h3>
+            <div class="checkbox-area">
+              <h4>Maths</h4>
+              <input type="checkbox" name="check" value="maths" id="subject" class="class4"/>
+              <h4>Science</h4>
+              <input
+                type="checkbox"
+                name="check"
+                value="science"
+                id="subject"
+                class="class4"
+              />
+              <h4>History</h4>
+              <input
+                type="checkbox"
+                name="check"
+                value="history"
+                id="subject"
+                class="class4"
+              />
+              <h4>Geography</h4>
+              <input
+                type="checkbox"
+                name="check"
+                value="geography"
+                id="subject"
+                class="class4"
+              />
+            </div>
+
+            <div class="buttons">
+              <button
+                type="submit"
+                name="submit-details-button"
+                class="left-button"
+                id="submit-details-button"
+              >
+                Submit
+              </button>
+              <button
+                type="button"
+                class="right-button"
+                id="close-details-button"
+              >
+                Close
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <!-- ///////////////////////////////////////// add school form //////////////////////////// -->
+
+    <section>
+      <div class="loginForm add-school-form" id="add-school-form">
+        <section class="heading">Add School</section>
+        <section>
+          <form id="add-school" class="newForm add-school" name="add-school">
+            <input
+              type="text"
+              required
+              name="name"
+              id="school-name"
+              placeholder="Enter School Name"
+            />
+            <input
+              type="text"
+              required
+              name="address"
+              id="school-address"
+              class="school-address"
+              placeholder="Enter Address"
+            />
+            <input
+              type="text"
+              class="mname"
+              name="workerName"
+              id="managerName"
+              placeholder="Enter Worker Name (optional)"
+            />
+            <input
+              type="text"
+              class="sub-name"
+              name="classes"
+              id="name-of-classes"
+              placeholder="Enter Classes (comma separated)"
+            />
+            <div class="subject-checkbox">
+              <h4 class="checkbox-subject-name">Maths</h4>
+            <input
+              type="checkbox"
+              class="sub-name"
+              name="subjects"
+              id="name-of-subject1"
+              value="maths"
+            />
+            <h4 class="checkbox-subject-name">Science</h4>
+            <input
+              type="checkbox"
+              class="sub-name"
+              name="subjects"
+              id="name-of-subject2"
+              value="science"
+            />
+            <h4 class="checkbox-subject-name">English</h4>
+            <input
+              type="checkbox"
+              class="sub-name"
+              name="subjects"
+              id="name-of-subject3"
+              value="english"
+            />
+            </div>
+            <div class="subject-checkbox">
+              <h4 class="checkbox-subject-name">History</h4>
+            <input
+              type="checkbox"
+              class="sub-name"
+              name="subjects"
+              id="name-of-subject4"
+              value="history"
+            />
+            <h4 class="checkbox-subject-name">Geography</h4>
+            <input
+              type="checkbox"
+              class="sub-name"
+              name="subjects"
+              id="name-of-subject1"
+              value="geography"
+            />
+          </div>
+            <div class="buttons">
+
+              <button
+                type="button"
+                id="save-add-school-button"
+                name="save-add-school-button"
+                class="left-button"
+              >
+          
+                Save
+              </button>
+              <button
+                type="button"
+                id="close-add-school-button"
+                name="save-add-school-button"
+                class="right-button"
+              >
+                Close
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <!-- ////////////////////////////////////////// view requests section ///////////////////////// -->
+
+    <section class="requests-section" id="requests-section">
+      <section id="requests-card-section"></section>
+      <section id="close-requests">
+        <button type="button" id="close-requests-button">Close</button>
+      </section>
+    </section>
+
+    <!-- /////////////////////////////// assign-school-section ////////////////////////////////// -->
+
+    <section class="assign-school-section" id="assign-school-section">
+      <div class="rows">
+        <div class="col1 worker-name assign-worker">Worker 1</div>
+        <div class="school-dropdown">
+          <select class="worker-list" multiple>
+            <option value="school 1" name="school 1" id="school 1">
+              School 1
+            </option>
+            <option value="school 2" name="school 2" id="school 2">
+              School 2
+            </option>
+            <option value="school 3" name="school 3" id="school 3">
+              School 3
+            </option>
+          </select>
+        </div>
+        <div class="assign-buttons">
+          <button type="button" class="assign-button" id="assign-button">Assign School</button>
+          <button type="button" class="assign-button" id="delete-button">Delete Worker</button>
+        </div>
+      </div>
+      <div class="rows">
+        <div class="col1 worker-name assign-worker">Worker 1</div>
+        <div class="school-dropdown">
+          <select class="worker-list" multiple>
+            <option value="school 1" name="school 1" id="school 1">
+              School 1
+            </option>
+            <option value="school 2" name="school 2" id="school 2">
+              School 2
+            </option>
+            <option value="school 3" name="school 3" id="school 3">
+              School 3
+            </option>
+          </select>
+        </div>
+        <div class="assign-buttons">
+          <button type="button" class="assign-button" id="assign-button">Assign School</button>
+          <button type="button" class="assign-button" id="delete-button">Delete Worker</button>
+        </div>
+      </div>
+      <div class="rows">
+        <div class="col1 worker-name assign-worker">Worker 1</div>
+        <div class="school-dropdown">
+          <select class="worker-list" multiple>
+            <option value="school 1" name="school 1" id="school 1">
+              School 1
+            </option>
+            <option value="school 2" name="school 2" id="school 2">
+              School 2
+            </option>
+            <option value="school 3" name="school 3" id="school 3">
+              School 3
+            </option>
+          </select>
+        </div>
+        <div class="assign-buttons">
+          <button type="button" class="assign-button" id="assign-button">Assign School</button>
+          <button type="button" class="delete-worker-button assign-button" id="delete-worker-button">Delete Worker</button>
+        </div>
+      </div>
+      
+      <button type="button" id="close-assign-button">Close</button>
+    </section>
+
+
+    <!-- ////////////////////////// schools-tab ////////////////////////////// -->
+
+    <section id="school-tab" class="schools">
+    <section class="school"  id="display-admin-school-cards">
+      <!-- <section class="display-admin-school-cards"></section> -->
+   </section>
+    <div>
+
+      <button
+      type="button"
+      class="add-school-button"
+      id="add-school-button"
+    >
+      Add School
+    </button>
+      <button
+      type="button"
+      class="add-school-button close-school-tab-button"
+      id="close-school-tab-button"
+    >
+      Close
+    </button>
+  </section>
+
+<!-- ///////////////////////////////// school- details - div /////////////////////////////////// -->
+
+<section class="school-details-div" id="school-details-div">
+
+    <h3>Worker Name: <span class="red">shruti</span></h3>
+    <h3>Total Classes: <span class="red">2</span></h3>
+    <h3>Classes: <span class="red">Class 1, Class 2</span></h3>
+    <h3>Total Subjects: <span class="red">2</span></h3>
+    <h3>Subjects: <span class="red">Maths, Science</span></h3>
+    <h3>Partial Distribution Count: <span class="red">1</span></h3>
+    <h3>Complete Distribution Count: <span class="red">3</span></h3>
+    <h3>Zero Distribution Coount: <span class="red">0</span></h3>
+<button id="edit-school-button">Edit</button>
+<button id="delete-school-button" class="delete-school-button">Delete</button>
+<button id="close-school-details-button">Close</button>
+
+</section>
+
+
+    <!-- /////////////////////////////////// error div /////////////////////////////// -->
+
+    <section class="errorMessage" id="error-message">
+      <h1 id="display-message">Something Went Wrong!</h1>
+    </section>
+
+    <div class="bg" id="background"></div>
+  </body>
+</html>

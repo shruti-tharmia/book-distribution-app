@@ -1,0 +1,480 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* body{
+  background-color: lightgray;
+} */
+.card {
+  background-color: rgb(252, 208, 215);
+  font-size: larger;
+  box-shadow: 8px 6px 8px 8px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: 20%;
+  height: 20%;
+  margin: 2rem;
+  cursor: pointer;
+  text-align: center;
+}
+.assigned-school-card {
+  background-color: rgb(252, 208, 215);
+  font-size: larger;
+  box-shadow: 8px 6px 8px 8px rgba(0, 0, 0, 0.2);
+  /* transition: 0.3s; */
+  width: 100%;
+  height: 100%;
+  margin: 2rem;
+  cursor: pointer;
+  text-align: center;
+}
+.pop-up-card {
+  background-color: rgb(252, 208, 215);
+  font-size: large;
+  box-shadow: 8px 6px 8px 8px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  width: max-content;
+  height: 20%;
+  margin: 2rem;
+}
+.worker-card-container,
+.admin-card-container,
+.school-card-container {
+  padding-top: 2.5rem;
+}
+.school-details-div {
+  z-index: 8;
+  text-align: left;
+  position: absolute;
+  top: 30%;
+  border: thin solid;
+  left: 40%;
+  padding: 4rem;
+  display: none;
+  background-color: lightpink;
+}
+.admin-card-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+.card:hover {
+  box-shadow: 8px 8px 16px 8px rgba(0, 0, 0, 0.2);
+  background-color: lightsalmon;
+}
+.submit-details-form {
+  display: flex;
+  z-index: 10;
+}
+
+.heading {
+  text-align: center;
+}
+
+.admin-text {
+  padding: 1rem;
+  color: white;
+  background-color: black;
+  margin-left: 1rem;
+}
+.username {
+  text-align: center;
+}
+.headingDiv {
+  display: flex;
+  position: relative;
+  background-color: black;
+}
+.add-school-button,
+.assign-school-button,
+.view-requests-button,
+.view-status-button,
+.logout-button,
+.schools-button {
+  color: white;
+  background-color: black;
+  font-size: large;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-weight: 500;
+  position: absolute;
+  top: 0.5rem;
+}
+.add-school-button:hover,
+.assign-school-button:hover,
+.view-requests-button:hover,
+.view-status-button:hover,
+.logout-button:hover,
+.schools-button:hover {
+  border-radius: 1rem;
+  background-color: lightgreen;
+  color: black;
+}
+.close-school-tab-button {
+  position: absolute;
+  top: 90%;
+  right: 2%;
+  /* right: 2%; */
+}
+.loginForm {
+  width: 26rem;
+  margin: 8rem auto;
+  position: absolute;
+  right: 50%;
+  transform: translate(50%, 0);
+}
+.loginForm .heading {
+  font-size: 1.7rem;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  padding: 1.5rem 0 2rem 0;
+  background: #0f0c29; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.loginForm .newForm {
+  position: absolute;
+  background: white;
+  width: 100%;
+  padding: 3rem 0.7rem 0 2rem;
+  box-sizing: border-box;
+  border: 0.06rem solid #6d1c7d;
+  border-radius: 0 0 0.3rem 0.3rem;
+}
+
+.newForm input[type="password"],
+.newForm input[type="number"] {
+  margin-top: 1.2rem;
+}
+.newForm input {
+  height: 3rem;
+  width: 90%;
+  padding: 0 0.6rem;
+  border-radius: 0.2rem;
+  border: 0.06rem solid silver;
+  font-size: 1.2rem;
+  outline: none;
+}
+#save-school-button,
+#close-school-button,
+.assign-button,
+#close-assign-button,
+.approve-request-button,
+.reject-request-button,
+#close-requests-button {
+  margin-top: 2.5rem;
+  width: 8.5rem;
+  height: 2.8rem;
+  color: white;
+  cursor: pointer;
+  background: #0f0c29; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #24243e,
+    #302b63,
+    #0f0c29
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: 1.2rem;
+  width: 100%;
+}
+#save-school-button:hover,
+#close-requests-button:hover,
+.assign-button:hover,
+#close-assign-button:hover,
+#close-school-button:hover,
+.approve-request-button:hover,
+.reject-request-button:hover {
+  background: black;
+  border-radius: 2rem;
+}
+.newForm h3 {
+  margin-top: 1rem;
+  width: 96%;
+}
+.add-school-form,
+#school-tab {
+  display: none;
+  position: absolute;
+  top: -3%;
+  left: 20%;
+  /* z-index: 3; */
+  /* transform: translate(-50%,-50%); */
+}
+#school-tab {
+  background-color: lightgray;
+  height: 100%;
+  width: 100%;
+  left: 0%;
+  top: 1%;
+  z-index: 7;
+}
+.add-school-form {
+  z-index: 8;
+}
+
+.buttons {
+  display: flex;
+  margin-bottom: 2rem;
+  margin-left: 1rem;
+  width: 90%;
+}
+
+.right-button {
+  margin-left: 1rem;
+  /* width: max-content; */
+}
+.left-button {
+  margin-left: 0;
+}
+.mname,
+.sub-name {
+  margin-top: 1rem;
+}
+#admin-page {
+  background-color: lightgrey;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+  /* z-index: 2; */
+}
+#worker-page {
+  background-color: lightgray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+  /* z-index: 2; */
+}
+/* .view-requests-button{
+  margin-left: -2rem;
+} */
+.assign {
+  /* flex: 1; */
+  margin-left: 12%;
+  /* position: absolute; */
+  /* right: 0; */
+}
+.school {
+  /* flex: 1; */
+  margin-left: 15%;
+}
+.logout {
+  position: absolute;
+  right: 12%;
+}
+.requests {
+  /* flex:1; */
+  margin-left: 38%;
+}
+.admin,
+.worker,
+.school {
+  display: flex;
+  flex-wrap: wrap;
+  height: 90%;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.checkbox-area {
+  display: flex;
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat(4, 20rem);
+  border: thin solid;
+  margin: 4rem;
+  grid-gap: 2rem;
+}
+
+.col1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.col2,
+.col3 {
+  margin-left: -6rem;
+}
+.worker-name {
+  font-size: x-large;
+  padding-left: 10rem;
+  padding-top: 2.5rem;
+}
+.approve-request-button,
+.reject-request-button {
+  width: 10rem;
+  margin-bottom: 2rem;
+}
+.requests-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 1rem;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: lightgray;
+}
+#close-requests-button,
+#close-assign-button {
+  width: 10rem;
+  margin: 0;
+  margin-left: 42%;
+}
+.rows {
+  display: flex;
+}
+.assign-worker,
+select {
+  padding: 0;
+  font-size: x-large;
+  margin: 2rem;
+}
+select {
+  font-size: large;
+}
+.assign-school-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 1rem;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-color: lightgray;
+  padding-left: 30%;
+  padding-top: 5%;
+}
+.assign-button {
+  margin-top: 1.8rem;
+  margin-left: 2rem;
+  height: 2rem;
+  width: max-content;
+}
+.admin-cards {
+  top: 10%;
+  width: 100%;
+  position: absolute;
+}
+.red {
+  color: red;
+}
+.flip-card {
+  background-color: transparent;
+  width: 22rem;
+  height: 13rem;
+  border: 1px solid #f1f1f1;
+  margin: 1rem;
+  perspective: 1000px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: lightpink;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: lightgray;
+  color: black;
+  transform: rotateY(180deg);
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+}
+.admin-dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.admin-dashboard-card {
+  text-align: justify;
+  color: black;
+  padding: 3rem;
+  border: thin solid;
+  border-radius: 10px;
+}
+.subject-checkbox {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem;
+  margin-left: 0;
+}
+.checkbox-subject-name {
+  margin-top: 1rem;
+  text-decoration: none;
+}
+.year {
+  /* margin: 1rem; */
+  display: flex;
+  position: absolute;
+  gap: 1rem;
+  top: 2%;
+  left: 2%;
+  padding: 0.5rem;
+  font-size: large;
+}
+.dashboard-heading {
+  margin-top: 9rem;
+  margin-left: 26rem;
+  color: darkred;
+}
+#get-data {
+  padding: 1rem;
+  background: lightsteelblue;
+  font-size: medium;
+  cursor: pointer;
+  border-radius: 10px;
+}
+#get-data:hover {
+  background-color: lightblue;
+}
+input[type="text"] {
+  font-size: medium;
+  padding-left: 1rem;
+}
